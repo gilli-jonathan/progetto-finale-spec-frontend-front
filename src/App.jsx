@@ -1,13 +1,26 @@
-
+import { BrowserRouter, Route } from "react-router-dom"
+import DeafualtLayout from "./layout/DefaultLayout"
+import Homepage from "./Pages/Homepage"
+import GameDetails from "./Pages/GameDetails"
+import Compare from "./Pages/Compare"
+import Favorite from "./Pages/Favorite"
 
 function App() {
 
 
   return (
-    <>
-      <h1>CIAO PROGETTO</h1>
-      <p>proviamo a scrivere cose per vedere se è tutto ok </p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<DeafualtLayout />}>
+          <Route path="/" Component={Homepage} />
+          <Route path="/game/:id" Component={GameDetails} />
+          <Route path="/compare" Component={Compare} />
+          <Route path="/favorite" Component={Favorite} />
+        </Route>
+      </Routes>
+
+
+    </BrowserRouter>
   )
 }
 

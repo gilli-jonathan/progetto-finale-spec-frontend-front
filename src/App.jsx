@@ -14,9 +14,6 @@ function App() {
     <GameProvider>
       <FavoriteProvider>
         <CompareProvider>
-
-
-
           <BrowserRouter>
             <Routes>
               <Route element={<DefualtLayout />}>
@@ -27,8 +24,6 @@ function App() {
               </Route>
             </Routes>
           </BrowserRouter>
-
-
         </CompareProvider>
       </FavoriteProvider>
     </GameProvider>

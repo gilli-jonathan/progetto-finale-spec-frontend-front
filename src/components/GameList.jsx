@@ -1,17 +1,27 @@
 import { useContext, useState } from "react";
 import { GameContext } from "../context/GlobalContext";
+import FiltersForm from "./FiltersForm";
 
 export default function GameList() {
 
     //prendo la lista di tutti i giochi + la stringa per il filtro di ricerca
-    const { games, searchQuery } = useContext(GameContext)
+    const { games, searchQuery, filters } = useContext(GameContext)
 
-    //filtrami i contenuti in cui game.title contiene il valore di searchQuery, tutto lowerCase
-    const gamesList = games.filter(game => game.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    const gamesList = games.filter(game => {
+        //filtrami i contenuti in cui game.title contiene il valore di searchQuery, tutto lowerCase
+        const searchGame = game.title.toLowerCase().includes(searchQuery.toLowerCase());
+
+        //filtrami tutti i game.category che sono uguali a filters
+        const searchCategory = filters.category === "" || game.category === filters.category
+
+        return searchGame && searchCategory
+    })
 
     return (
 
         <>
+
+            <FiltersForm />
             <h3>elenco dei giochi</h3>
             {
                 gamesList.map((game => (

@@ -11,11 +11,18 @@ function GameProvider({ children }) {
     const games = useFetchGames()
     console.log(games);
 
-    //la stringa che verrà uusata come paragone nel filter per la searchBar
+    //la stringa che verrà usata come ricerca tremite la searchBar
     const [searchQuery, setSearchQuery] = useState("")
 
+    // metto i filtri per la ricerca come categoria, console, ecc..
+    const [filters, setFilters] = useState({
+        "category": "",
+        "console": "",
+        "platform": "",
+    })
+
     return (
-        <GameContext.Provider value={{ games, searchQuery, setSearchQuery }}>
+        <GameContext.Provider value={{ games, searchQuery, setSearchQuery, filters, setFilters }}>
             {children}
         </GameContext.Provider>
     )

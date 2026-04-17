@@ -10,7 +10,10 @@
         "image": "/images/zelda1.jpg",
         "vote": 85,
         "remake": true,
-        "remakePlatform": "Game & Watch / Switch Online"
+        "remakePlatform": "Game & Watch / Switch Online",
+        "id": 1,
+        "createdAt": "2026-04-16T15:07:42.218Z",
+        "updatedAt": "2026-04-16T15:07:42.218Z"
     },
     {
         "title": "Zelda II: The Adventure of Link",
@@ -23,7 +26,10 @@
         "image": "/images/zelda2.jpg",
         "vote": 70,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 2,
+        "createdAt": "2026-04-16T15:08:17.977Z",
+        "updatedAt": "2026-04-16T15:08:17.977Z"
     },
     {
         "title": "A Link to the Past",
@@ -36,7 +42,10 @@
         "image": "/images/alttp.jpg",
         "vote": 95,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 3,
+        "createdAt": "2026-04-16T15:11:54.467Z",
+        "updatedAt": "2026-04-16T15:11:54.467Z"
     },
     {
         "title": "Link's Awakening",
@@ -49,7 +58,10 @@
         "image": "/images/la.jpg",
         "vote": 90,
         "remake": true,
-        "remakePlatform": "Nintendo Switch"
+        "remakePlatform": "Nintendo Switch",
+        "id": 4,
+        "createdAt": "2026-04-16T15:12:09.948Z",
+        "updatedAt": "2026-04-16T15:12:09.948Z"
     },
     {
         "title": "Ocarina of Time",
@@ -62,7 +74,10 @@
         "image": "/images/oot.jpg",
         "vote": 99,
         "remake": true,
-        "remakePlatform": "Nintendo 3DS"
+        "remakePlatform": "Nintendo 3DS",
+        "id": 5,
+        "createdAt": "2026-04-16T15:15:00.831Z",
+        "updatedAt": "2026-04-16T15:15:00.831Z"
     },
     {
         "title": "Majora's Mask",
@@ -75,7 +90,10 @@
         "image": "/images/mm.jpg",
         "vote": 92,
         "remake": true,
-        "remakePlatform": "Nintendo 3DS"
+        "remakePlatform": "Nintendo 3DS",
+        "id": 6,
+        "createdAt": "2026-04-16T15:15:13.279Z",
+        "updatedAt": "2026-04-16T15:15:13.279Z"
     },
     {
         "title": "Oracle of Ages",
@@ -88,7 +106,10 @@
         "image": "/images/ooa.jpg",
         "vote": 88,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 7,
+        "createdAt": "2026-04-16T15:15:24.610Z",
+        "updatedAt": "2026-04-16T15:15:24.610Z"
     },
     {
         "title": "Oracle of Seasons",
@@ -101,7 +122,10 @@
         "image": "/images/oos.jpg",
         "vote": 88,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 8,
+        "createdAt": "2026-04-16T15:15:40.635Z",
+        "updatedAt": "2026-04-16T15:15:40.635Z"
     },
     {
         "title": "Four Swords",
@@ -114,7 +138,10 @@
         "image": "/images/fs.jpg",
         "vote": 75,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 9,
+        "createdAt": "2026-04-16T15:15:52.155Z",
+        "updatedAt": "2026-04-16T15:15:52.155Z"
     },
     {
         "title": "The Wind Waker",
@@ -127,7 +154,10 @@
         "image": "/images/tww.jpg",
         "vote": 94,
         "remake": true,
-        "remakePlatform": "Wii U"
+        "remakePlatform": "Wii U",
+        "id": 10,
+        "createdAt": "2026-04-16T15:16:03.663Z",
+        "updatedAt": "2026-04-16T15:16:03.663Z"
     },
     {
         "title": "Four Swords Adventures",
@@ -140,7 +170,10 @@
         "image": "/images/fsa.jpg",
         "vote": 80,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 11,
+        "createdAt": "2026-04-16T15:16:14.594Z",
+        "updatedAt": "2026-04-16T15:16:14.594Z"
     },
     {
         "title": "The Minish Cap",
@@ -153,7 +186,10 @@
         "image": "/images/tmc.jpg",
         "vote": 89,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 12,
+        "createdAt": "2026-04-16T15:16:27.305Z",
+        "updatedAt": "2026-04-16T15:16:27.305Z"
     },
     {
         "title": "Twilight Princess",
@@ -166,7 +202,10 @@
         "image": "/images/tp.jpg",
         "vote": 93,
         "remake": true,
-        "remakePlatform": "Wii U"
+        "remakePlatform": "Wii U",
+        "id": 13,
+        "createdAt": "2026-04-16T15:16:36.213Z",
+        "updatedAt": "2026-04-16T15:16:36.213Z"
     },
     {
         "title": "Phantom Hourglass",
@@ -179,7 +218,10 @@
         "image": "/images/ph.jpg",
         "vote": 82,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 14,
+        "createdAt": "2026-04-16T15:16:47.075Z",
+        "updatedAt": "2026-04-16T15:16:47.075Z"
     },
     {
         "title": "Spirit Tracks",
@@ -192,7 +234,10 @@
         "image": "/images/st.jpg",
         "vote": 81,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 15,
+        "createdAt": "2026-04-16T15:17:06.654Z",
+        "updatedAt": "2026-04-16T15:17:06.654Z"
     },
     {
         "title": "Skyward Sword",
@@ -205,7 +250,10 @@
         "image": "/images/ss.jpg",
         "vote": 87,
         "remake": true,
-        "remakePlatform": "Nintendo Switch"
+        "remakePlatform": "Nintendo Switch",
+        "id": 16,
+        "createdAt": "2026-04-16T15:17:24.395Z",
+        "updatedAt": "2026-04-16T15:17:24.395Z"
     },
     {
         "title": "A Link Between Worlds",
@@ -218,7 +266,10 @@
         "image": "/images/albw.jpg",
         "vote": 91,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 17,
+        "createdAt": "2026-04-16T15:17:33.873Z",
+        "updatedAt": "2026-04-16T15:17:33.873Z"
     },
     {
         "title": "Tri Force Heroes",
@@ -231,7 +282,10 @@
         "image": "/images/tfh.jpg",
         "vote": 73,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 18,
+        "createdAt": "2026-04-16T15:17:53.859Z",
+        "updatedAt": "2026-04-16T15:17:53.859Z"
     },
     {
         "title": "Breath of the Wild",
@@ -244,7 +298,10 @@
         "image": "/images/botw.jpg",
         "vote": 97,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 19,
+        "createdAt": "2026-04-16T15:18:05.843Z",
+        "updatedAt": "2026-04-16T15:18:05.843Z"
     },
     {
         "title": "Tears of the Kingdom",
@@ -257,7 +314,10 @@
         "image": "/images/totk.jpg",
         "vote": 96,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 20,
+        "createdAt": "2026-04-16T15:18:15.428Z",
+        "updatedAt": "2026-04-16T15:18:15.428Z"
     },
     {
         "title": "Echoes of Wisdom",
@@ -270,6 +330,9 @@
         "image": "/images/eow.jpg",
         "vote": 86,
         "remake": false,
-        "remakePlatform": ""
+        "remakePlatform": "",
+        "id": 21,
+        "createdAt": "2026-04-16T15:18:25.196Z",
+        "updatedAt": "2026-04-16T15:18:25.196Z"
     }
 ]

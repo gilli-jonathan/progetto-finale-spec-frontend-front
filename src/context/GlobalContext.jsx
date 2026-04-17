@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { useFetchGames } from "../hooks/useFetchGames.js";
 // import { useGameDetails } from "../hooks/";
 
@@ -9,9 +9,13 @@ const CompareContext = createContext()
 function GameProvider({ children }) {
 
     const games = useFetchGames()
+    console.log(games);
+
+    //la stringa che verrà uusata come paragone nel filter per la searchBar
+    const [searchQuery, setSearchQuery] = useState("")
 
     return (
-        <GameContext.Provider value={games}>
+        <GameContext.Provider value={{ games, searchQuery, setSearchQuery }}>
             {children}
         </GameContext.Provider>
     )

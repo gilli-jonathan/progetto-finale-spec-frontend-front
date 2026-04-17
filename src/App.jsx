@@ -16,7 +16,7 @@ function App() {
         <CompareProvider>
           <BrowserRouter>
             <Routes>
-              <Route element={<DefualtLayout />}>
+              <Route element={<DefaultLayout />}>
                 <Route path="/" Component={Homepage} />
                 <Route path="/game/:id" Component={GameDetails} />
                 <Route path="/compare" Component={Compare} />

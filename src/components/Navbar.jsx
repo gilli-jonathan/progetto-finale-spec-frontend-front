@@ -6,7 +6,7 @@ export default function Navbar() {
         <nav>
             <NavLink to="/">  HOME  </NavLink>
 
-            <NavLink to="/game/:12">  DETAIL  </NavLink>
+            <NavLink to="/game/19">  DETAIL  </NavLink>
 
             <NavLink to="/compare">  COMPARE  </NavLink>
 

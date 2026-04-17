@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { GameContext } from "../context/GlobalContext";
+import { GameContext, FavoriteContext } from "../context/GlobalContext";
 import FiltersForm from "./FiltersForm";
 import { Link } from "react-router-dom";
 
@@ -14,7 +14,6 @@ export default function GameList() {
 
         //filtrami tutti i game.category che sono uguali a filters
         const searchCategory = filters.category === "" || game.category === filters.category
-
         return searchGame && searchCategory
     })
 
@@ -30,6 +29,12 @@ export default function GameList() {
 
     })
 
+    const { favGames, toggleFav } = useContext(FavoriteContext)
+    console.log(favGames);
+    console.log(sortedGames);
+
+
+
     return (
 
         <>
@@ -42,6 +47,7 @@ export default function GameList() {
                         <Link to={`/game/${game.id}`} >
                             <h5>{game.title}</h5>
                         </Link>
+                        <button onClick={() => toggleFav(game)}> aggiungi/togli dai preferiti</button>
                     </nav>
                 )))
             }

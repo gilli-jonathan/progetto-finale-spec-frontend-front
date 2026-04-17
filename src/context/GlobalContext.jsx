@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
 import { useFetchGames } from "../hooks/useFetchGames.js";
-// import { useGameDetails } from "../hooks/";
 
 const GameContext = createContext()
 const FavoriteContext = createContext()
@@ -30,10 +29,24 @@ function GameProvider({ children }) {
 
 function FavoriteProvider({ children }) {
 
-    const favGames = 'mettere uno state per gestire i preferiti'
+    const [favGames, setFavGames] = useState([])
+
+    const toggleFav = game => {
+        setFavGames(prev => {
+            //const che restituisce true o false, questo gioco è già tra i miei preferiti?
+            const nellaLista = prev.find(g => g.id === game.id)
+            //ora in base alla risposta agisco in 2 modi
+            if (nellaLista) { //TRUE tolgo il gioco dalla lista con un filter
+                return prev.filter(g => g.id !== game.id)
+            } else { //FALSE faccio un clone dell'array(oppure lo creo) e aggiungo quello nuovo 
+                const nuovoElenco = [...prev, game]
+                return nuovoElenco //sto assegnanfo a favGame questi oggetti
+            }
+        })
+    }
 
     return (
-        <FavoriteContext.Provider value={favGames}>
+        <FavoriteContext.Provider value={{ favGames, toggleFav }}>
             {children}
         </FavoriteContext.Provider>
     )

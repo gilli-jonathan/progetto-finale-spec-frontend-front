@@ -19,7 +19,7 @@ function GameProvider({ children }) {
         "category": "",
         "console": "",
         "platform": "",
-        "order": "asc"
+        "order": "dritto"
     })
 
     return (

@@ -24,19 +24,29 @@ export default function FiltersForm() {
 
     return (
 
-        <form onSubmit={handleSubmit}>
-            <label><p>categotia</p>
-                <select name="category" value={filters.category} onChange={handleFilterChange}>
-                    <option value="">scegli</option>
-                    <option value="Classic">Classic</option>
-                    <option value="Side-scrolling">Side-Scrolling</option>
-                    <option value="Action 3D">Action 3D</option>
-                    <option value="Open Air">Open air</option>
-                </select>
-            </label>
+        <>
+            <form onSubmit={handleSubmit}>
+                <label><p>categotia</p>
+                    <select name="category" value={filters.category} onChange={handleFilterChange}>
+                        <option value="">scegli</option>
+                        <option value="Classic">Classic</option>
+                        <option value="Side-scrolling">Side-Scrolling</option>
+                        <option value="Action 3D">Action 3D</option>
+                        <option value="Open Air">Open air</option>
+                    </select>
+                </label>
 
-            <button type="submit"> cerca </button>
-        </form>
+                <label>
+                    <p>Ordina per nome</p>
+                    <select name="order" value={filters.sortOrder} onChange={handleFilterChange}>
+                        <option value="dritto">A - Z</option>
+                        <option value="reverse">Z - A</option>
+                    </select>
+                </label>
+
+                <button type="submit"> cerca </button>
+            </form>
+        </>
     )
 
 } 

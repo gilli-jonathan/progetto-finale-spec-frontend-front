@@ -19,6 +19,7 @@ function GameProvider({ children }) {
         "category": "",
         "console": "",
         "platform": "",
+        "order": "asc"
     })
 
     return (

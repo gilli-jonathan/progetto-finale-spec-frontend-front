@@ -17,6 +17,18 @@ export default function GameList() {
         return searchGame && searchCategory
     })
 
+    //ordiniamo i giochi in ordine alfabetico 
+    //inizio copiando tutto l'array che ottengo come risultato da gameList
+    const sortedGames = [...gamesList].sort((a, b) => {
+        //gli dico se farlo dritto o in reverse
+        if (filters.order === "dritto") {
+            return a.title.localeCompare(b.title)
+        } else { //altrimenti in reverse
+            return b.title.localeCompare(a.title)
+        }
+
+    })
+
     return (
 
         <>
@@ -24,11 +36,10 @@ export default function GameList() {
             <FiltersForm />
             <h3>elenco dei giochi</h3>
             {
-                gamesList.map((game => (
+                sortedGames.map((game => (
                     <h5 key={game.id}>{game.title}</h5>
                 )))
             }
         </>
     )
-
 }

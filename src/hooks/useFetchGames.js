@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 const { VITE_API_URL } = import.meta.env;
 
 //hook per avere tutti i giochi
-function useGames() {
+export function useFetchGames() {
 
     const [games, setGames] = useState([])
 
@@ -28,3 +28,4 @@ function useGames() {
     //una volta andata a buon fine restituisco l'array games con dentro le risposte
     return games
 }
+

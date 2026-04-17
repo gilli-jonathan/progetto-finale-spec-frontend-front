@@ -1,4 +1,6 @@
 import { createContext } from "react";
+import { useFetchGames } from "../hooks/useFetchGames.js";
+// import { useGameDetails } from "../hooks/";
 
 const GameContext = createContext()
 const FavoriteContext = createContext()
@@ -6,7 +8,7 @@ const CompareContext = createContext()
 
 function GameProvider({ children }) {
 
-    const games = 'inserire il risultato dell api'
+    const games = useFetchGames()
 
     return (
         <GameContext.Provider value={games}>

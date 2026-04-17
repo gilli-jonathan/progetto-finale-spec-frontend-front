@@ -22,7 +22,7 @@ export default function GameDetails() {
         <>
             <h2>Pagina del dettaglio di {zeldagame.title} </h2>
             <p>{zeldagame.description}</p>
-            <button onClick={() => toggleFav(game)}> aggiungi ai preferiti</button>
+            <button onClick={() => toggleFav(zeldagame)}> aggiungi ai preferiti</button>
 
         </>
     )

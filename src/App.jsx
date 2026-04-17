@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import DefualtLayout from "./layout/DefaultLayout"
+import DefaultLayout from "./layout/DefaultLayout"
 import Homepage from "./Pages/Homepage"
 import GameDetails from "./Pages/GameDetails"
 import Compare from "./Pages/Compare"

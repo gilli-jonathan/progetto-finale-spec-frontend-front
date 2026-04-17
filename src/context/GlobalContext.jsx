@@ -9,7 +9,6 @@ const CompareContext = createContext()
 function GameProvider({ children }) {
 
     const games = useFetchGames()
-    console.log(games);
 
     //la stringa che verrà usata come ricerca tremite la searchBar
     const [searchQuery, setSearchQuery] = useState("")

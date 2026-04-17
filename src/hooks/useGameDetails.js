@@ -2,9 +2,11 @@ import { useState, useEffect } from "react"
 const { VITE_API_URL } = import.meta.env;
 
 
-function useGameDetails(gameId) {
+export function useGameDetails(gameId) {
 
-    const [game, setGame] = useState([])
+    //assegno null perché mettere un array vuoto viene considerato già come risposta
+    const [game, setGame] = useState(null)
+
 
     useEffect(() => {
 
@@ -14,7 +16,7 @@ function useGameDetails(gameId) {
             try {
                 const response = await fetch(`${VITE_API_URL}/${gameId}`)
                 const data = await response.json()
-                setGames(data)
+                setGame(data)
             } catch (error) {
                 console.error(error);
             }
@@ -23,7 +25,8 @@ function useGameDetails(gameId) {
         //eseguo la mia chiamata al montaggio dei componenti richiamando la funzione
         fetchGames()
 
-    }, [])
+    }, [gameId] //metto gameId come dipendenza così che se dovesse cambiare dall'url verebbe aggiornato
+    )
 
     return game //restituisco il dettaglio del singolo gioco
 }

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { GameContext } from "../context/GlobalContext";
 import FiltersForm from "./FiltersForm";
+import { Link } from "react-router-dom";
 
 export default function GameList() {
 
@@ -37,7 +38,11 @@ export default function GameList() {
             <h3>elenco dei giochi</h3>
             {
                 sortedGames.map((game => (
-                    <h5 key={game.id}>{game.title}</h5>
+                    <nav key={game.id}>
+                        <Link to={`/game/${game.id}`} >
+                            <h5>{game.title}</h5>
+                        </Link>
+                    </nav>
                 )))
             }
         </>

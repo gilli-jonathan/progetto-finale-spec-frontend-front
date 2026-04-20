@@ -10,7 +10,7 @@ export default function Compare() {
 
     return (
         <>
-            {
+            {compGames.length === 0 ? <p>non ci sono giochi per il confronto</p> :
                 compGames.map((game => (
                     <nav key={game.id}>
                         <Link to={`/game/${game.id}`} >

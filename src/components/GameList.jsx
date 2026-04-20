@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { GameContext, FavoriteContext } from "../context/GlobalContext";
+import { GameContext, FavoriteContext, CompareContext } from "../context/GlobalContext";
 import FiltersForm from "./FiltersForm";
 import { Link } from "react-router-dom";
 
@@ -26,14 +26,13 @@ export default function GameList() {
         } else { //altrimenti in reverse
             return b.title.localeCompare(a.title)
         }
-
     })
 
+    //destruttura per usare i fav
     const { favGames, toggleFav } = useContext(FavoriteContext)
-    console.log(favGames);
-    console.log(sortedGames);
 
-
+    //destruttura per i giochi comp
+    const { compGames, toggleComp } = useContext(CompareContext)
 
     return (
 
@@ -48,6 +47,7 @@ export default function GameList() {
                             <h5>{game.title}</h5>
                         </Link>
                         <button onClick={() => toggleFav(game)}> aggiungi/togli dai preferiti</button>
+                        <button onClick={() => toggleComp(game)}> aggiungi/togli x confronto</button>
                     </nav>
                 )))
             }

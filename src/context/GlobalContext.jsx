@@ -67,7 +67,7 @@ function CompareProvider({ children }) {
 
             } else { //FALSE gestisco cosa fare se il gioco non è nella lista:
 
-                if (prev.length <= 2) {
+                if (prev.length >= 2) {
                     //ho già 2 giochi Comp pieno
                     alert("hai già 2 giochi da confrontare")
                     return prev //rimetto tutto com'era prima

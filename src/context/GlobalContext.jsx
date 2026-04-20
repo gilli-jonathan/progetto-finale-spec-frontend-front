@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useFetchGames } from "../hooks/useFetchGames.js";
 
 const GameContext = createContext()
@@ -29,7 +29,15 @@ function GameProvider({ children }) {
 
 function FavoriteProvider({ children }) {
 
-    const [favGames, setFavGames] = useState([])
+    const [favGames, setFavGames] = useState(() => {
+        const savedFavs = localStorage.getItem("zelda_favorites");
+        return savedFavs ? JSON.parse(savedFavs) : []; // se esiste lo convertiamo, altrimenti array vuoto
+    });
+
+    // ogni volta che favGames cambia, salviamo nel localStorage
+    useEffect(() => {
+        localStorage.setItem("zelda_favorites", JSON.stringify(favGames));
+    }, [favGames]);
 
     const toggleFav = game => {
         setFavGames(prev => {

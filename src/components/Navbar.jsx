@@ -3,14 +3,11 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
 
     return (
-        <nav>
-            <NavLink to="/">  HOME  </NavLink>
-
-            <NavLink to="/game/19">  DETAIL  </NavLink>
-
-            <NavLink to="/compare">  COMPARE  </NavLink>
-
-            <NavLink to="/favorite">  FAVORITI  </NavLink>
+        <nav className="nav-hd">
+            <NavLink className="nav-link" to="/">HOME</NavLink>
+            <NavLink className="nav-link" to="/game/19">DETAIL</NavLink>
+            <NavLink className="nav-link" to="/compare">COMPARE</NavLink>
+            <NavLink className="nav-link" to="/favorite">FAVORITI</NavLink>
         </nav>
     )
 }

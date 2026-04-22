@@ -3,9 +3,8 @@ import { GameContext, FavoriteContext, CompareContext } from "../context/GlobalC
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart as faSolidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as faSolidHeart, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faRegularHeart } from '@fortawesome/free-regular-svg-icons';
-import { faCodeCompare } from '@fortawesome/free-solid-svg-icons';
 
 export default function GameList() {
 
@@ -47,33 +46,35 @@ export default function GameList() {
                     const isToCompare = compGames.some(comp => comp.id === game.id);
 
                     return (
-                        <nav key={game.id} className="card">
-
-                            <div className="img-container" >
+                        <div key={game.id} className="card retro-outset">
+                            {/* Contenitore Immagine con bordo brutale */}
+                            <div className="card-img-wrapper brutal-border">
+                                <img src={game.image} alt={game.title} />
                             </div>
 
-                            <Link className="card-link" to={`/game/${game.id}`} >
-                                <p><strong>{game.title}</strong></p>
+                            <Link className="card-link" to={`/game/${game.id}`}>
+                                <p className="card-title"><strong>{game.title}</strong></p>
                             </Link>
 
-                            {/* Bottone Preferiti Dinamico */}
-                            <button onClick={() => toggleFav(game)}>
-                                <FontAwesomeIcon
-                                    icon={isFavorite ? faSolidHeart : faRegularHeart}
-                                    color={isFavorite ? "red" : "black"}
-                                />
-                            </button>
+                            <p className="card-category">{game.category}</p>
 
-                            {/* Bottone Confronto Dinamico */}
-                            <button onClick={() => toggleComp(game)}>
-                                <FontAwesomeIcon
-                                    icon={faCodeCompare}
-                                    color={isToCompare ? "blue" : "black"}
-                                />
-                            </button>
+                            {/* Footer della card con i bottoni */}
+                            <div className="card-footer">
+                                <button className="icon-btn" onClick={() => toggleFav(game)}>
+                                    <FontAwesomeIcon
+                                        icon={isFavorite ? faSolidHeart : faRegularHeart}
+                                        color={isFavorite ? "red" : "black"}
+                                    />
+                                </button>
 
-
-                        </nav>
+                                <button className="icon-btn" onClick={() => toggleComp(game)}>
+                                    <FontAwesomeIcon
+                                        icon={faShieldHalved}
+                                        color={isToCompare ? "blue" : "#ccc"}
+                                    />
+                                </button>
+                            </div>
+                        </div>
                     );
                 })
             }

@@ -26,35 +26,67 @@ export default function GameDetails() {
     const isToCompare = compGames.some(comp => comp.id === zeldagame.id);
 
     return (
-        <div>
-            <h2>Pagina del dettaglio di {zeldagame.title} </h2>
-            <p>{zeldagame.description}</p>
-            <button onClick={() => toggleFav(zeldagame)}> aggiungi ai preferiti</button>
+        // 
+        <div className="detail-container">
+            {/* Colonna Sinistra: La "Super Card" */}
+            <div className="detail-visual">
+                <div className="card retro-outset">
+                    <div className="img-placeholder brutal-border">
+                        <img src={zeldagame.image} alt={zeldagame.title} />
+                    </div>
 
-            <div key={zeldagame.id} className="card">
+                    <div className="card-actions">
+                        <button className="retro-outset" onClick={() => toggleFav(zeldagame)}>
+                            <FontAwesomeIcon
+                                icon={isFavorite ? faSolidHeart : faRegularHeart}
+                                color={isFavorite ? "red" : "black"}
+                            />
+                            <span>{isFavorite ? "Rimuovi" : "Salva nei preferiti"}</span>
+                        </button>
 
-                <div className="img-container" >
+                        <button className="retro-outset" onClick={() => toggleComp(zeldagame)}>
+                            <FontAwesomeIcon
+                                icon={faCodeCompare}
+                                color={isToCompare ? "blue" : "black"}
+                            />
+                            <span>{isToCompare ? "In confronto" : "Confronta"}</span>
+                        </button>
+                    </div>
                 </div>
-
-                {/* Bottone Preferiti Dinamico */}
-                <button onClick={() => toggleFav(zeldagame)}>
-                    <FontAwesomeIcon
-                        icon={isFavorite ? faSolidHeart : faRegularHeart}
-                        color={isFavorite ? "red" : "black"}
-                    />
-                </button>
-
-                {/* Bottone Confronto Dinamico */}
-                <button onClick={() => toggleComp(zeldagame)}>
-                    <FontAwesomeIcon
-                        icon={faCodeCompare}
-                        color={isToCompare ? "blue" : "black"}
-                    />
-                </button>
-
-
             </div>
 
+            {/* Colonna Destra: Informazioni tecniche */}
+            <div className="detail-info retro-outset">
+                <h1 className="brutal-text">{zeldagame.title}</h1>
+                <div className="badge-container">
+                    <span className="badge">{zeldagame.category}</span>
+                    <span className="badge">{zeldagame.console}</span>
+                </div>
+
+                <hr className="brutal-hr" />
+
+                <section className="info-section">
+                    <h3>Descrizione</h3>
+                    <p>{zeldagame.description}</p>
+                </section>
+
+                <section className="info-section">
+                    <h3>Storia</h3>
+                    <p>{zeldagame.story}</p>
+                </section>
+
+                <div className="technical-grid">
+                    <div className="tech-item">
+                        <strong>Anno:</strong> {zeldagame.releaseYear}
+                    </div>
+                    <div className="tech-item">
+                        <strong>Voto:</strong> {zeldagame.vote}/100
+                    </div>
+                    <div className="tech-item">
+                        <strong>Remake:</strong> {zeldagame.remake ? "Sì" : "No"}
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

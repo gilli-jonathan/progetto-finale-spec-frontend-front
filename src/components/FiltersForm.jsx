@@ -27,29 +27,46 @@ export default function FiltersForm() {
 
     return (
 
-        <>
+        <div className="filters-sidebar retro-outset">
+            <h4 className="brutal-border-bottom">FILTRI</h4>
 
-            <label><p>categoria</p>
-                <select name="category" value={filters.category} onChange={handleFilterChange}>
-                    <option value="">scegli</option>
+            <div className="filter-group">
+                <label>Categoria</label>
+                <select
+                    name="category"
+                    className="retro-inset"
+                    value={filters.category}
+                    onChange={handleFilterChange}
+                >
+                    <option value="">Tutte le categorie</option>
                     <option value="Classic">Classic</option>
                     <option value="Side-scrolling">Side-Scrolling</option>
                     <option value="Action 3D">Action 3D</option>
                     <option value="Open Air">Open air</option>
                 </select>
-            </label>
+            </div>
 
-            <label>
-                <p>Ordina per nome</p>
-                <select name="order" value={filters.order} onChange={handleFilterChange}>
+            <div className="filter-group">
+                <label>Ordina Alfabetico</label>
+                <select
+                    name="order"
+                    className="retro-inset"
+                    value={filters.order}
+                    onChange={handleFilterChange}
+                >
                     <option value="dritto">A - Z</option>
                     <option value="reverse">Z - A</option>
                 </select>
-            </label>
+            </div>
 
-            <button type="button" onClick={() => setFilters(resetObj)}> reset </button>
-
-        </>
+            <button
+                type="button"
+                className="reset-btn retro-outset"
+                onClick={() => setFilters(resetObj)}
+            >
+                RESET FILTRI
+            </button>
+        </div>
     )
 
 } 

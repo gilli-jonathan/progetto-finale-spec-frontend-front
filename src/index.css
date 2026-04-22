@@ -1,4 +1,6 @@
-/* Reset generale */
+/* ==========================================================================
+   1. RESET E VARIABILI 
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,151 +8,235 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Effetto Tasto Sollevato (per Card e Bottoni a riposo) */
+body {
+    background-color: #f0f0f0;
+    /* Un grigio leggerissimo per staccare dal bianco */
+}
+
+/* ==========================================================================
+   2. UTILITIES (Classi di stile riutilizzabili) 
+   ========================================================================== */
+
+/* Effetto Tasto Sollevato (per Card e Bottoni) */
 .retro-outset {
     border: 3px solid;
     border-color: #ffffff #808080 #808080 #ffffff;
-    /* Sopra-Sinistra Chiari, Sotto-Destra Scuri */
     background-color: #c0c0c0;
-    /* Il classico grigio grigio-beige */
     padding: 10px;
+    box-shadow: 2px 2px 0px #000;
+    /* Ombra netta per il tocco brutalista */
 }
 
-/* Effetto Tasto Premuto o Campo Input (per Hover o Input) */
+/* Effetto Tasto Premuto o Campo Input */
 .retro-inset {
     border: 3px solid;
     border-color: #808080 #ffffff #ffffff #808080;
-    /* Invertiamo i colori del bordo */
     background-color: #ffffff;
     padding: 10px;
 }
 
-/* Bordi Neri "Cartooneschi" (quello che abbiamo usato nell'header) */
+/* Bordi Neri Brutalisti */
 .brutal-border {
     border: 3px solid #000;
     box-shadow: 4px 4px 0px #000;
-    /* Ombra solida, non sfumata */
 }
 
-
-header {
-    background-color: #e0f4f9;
-    border-bottom: 3px solid #000;
-    padding: 1.5rem;
-
-    .header-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 0 auto;
-    }
-
-    /*LOGO*/
-    .logo-wrapper {
-        flex: 1;
-    }
-
-    .logo-img {
-        height: 200px;
-        width: auto;
-        display: block;
-    }
-
-    /*NAVBAR CENTRALE*/
-    .nav-hd {
-        flex: 2;
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-    }
-
-    .nav-link {
-        text-decoration: none;
-        color: #000;
-        font-weight: 800;
-        font-size: 1rem;
-        letter-spacing: 1px;
-        padding: 8px 16px;
-        border: 2px solid transparent;
-
-        &:hover {
-            background-color: #fff;
-            border: 2px solid #000;
-        }
-    }
-
-    /*Link attivo*/
-    .nav-link.active {
-        background-color: #000;
-        color: #fff;
-    }
-
-    /*SEARCHBAR*/
-    .search-wrapper {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-
-        input {
-            padding: 10px 15px;
-            border: 2px solid #000;
-            background-color: #fff;
-            font-size: 0.9rem;
-            width: 200px;
-        }
-
-    }
-}
-
-/*MAIN-CONTAINER*/
+/* ==========================================================================
+   3. LAYOUT GENERALE
+   ========================================================================== */
 main {
-    max-width: 80%;
+    max-width: 1200px;
+    /* Meglio un valore fisso per schermi grandi */
     margin: auto;
-
+    padding: 20px;
 }
 
 .main-page {
-    padding-top: 2rem;
     display: flex;
     gap: 2rem;
+    margin-top: 2rem;
 
-    .filter-container {
-        display: flex;
-        flex-direction: column;
-        max-width: 30%;
-    }
+}
 
-    .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
+/* ==========================================================================
+   4. HEADER E NAVBAR
+   ========================================================================== */
+header {
+    background-color: #e0f4f9;
+    border-bottom: 4px solid #000;
+    padding: 1rem 2rem;
+}
 
-    }
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-    .card {
+.logo-img {
+    height: 120px;
+    width: auto;
+}
 
-        padding: 1.5rem;
-        background-color: #808080;
-        flex: 0 0 calc((100% / 3) - 1.34rem);
+.nav-hd {
+    display: flex;
+    gap: 1rem;
+}
 
-        background-color: #c0c0c0;
-        border: 3px solid #000;
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: 800;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+}
 
-        .img-container {
-            display: flex;
-            align-items: center;
-            background-color: green;
-            margin: auto;
-            height: 90px;
-            margin-bottom: 1.5rem;
-        }
+.nav-link:hover {
+    background-color: #fff;
+    border: 2px solid #000;
+}
 
-        .card-link {
-            text-align: center;
-            text-decoration: none;
-            color: #000;
-        }
-    }
+.nav-link.active {
+    background-color: #000;
+    color: #fff;
+}
 
+/* ==========================================================================
+   5. HOMEPAGE: FILTRI E LISTA
+   ========================================================================== */
 
+/* Sidebar Filtri */
+.filter-container {
+    flex: 0 0 250px;
+}
+
+.filters-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.filter-group label {
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+/* Lista Card */
+.card-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.card-img-wrapper {
+    background-color: #fff;
+    height: 180px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 2px solid #000;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+    min-height: 2.8rem;
+}
+
+.card-category {
+    font-size: 0.75rem;
+    background: #000;
+    color: #fff;
+    padding: 3px 8px;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    border-top: 2px solid #808080;
+    padding-top: 10px;
+}
+
+/* ==========================================================================
+   6. PAGINA DETTAGLIO (Il nuovo stile "Prodotto")
+   ========================================================================== */
+.detail-container {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+.detail-visual {
+    flex: 1;
+    position: sticky;
+    top: 2rem;
+}
+
+.detail-info {
+    flex: 1.5;
+    padding: 2rem !important;
+}
+
+.brutal-text {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.technical-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    background: #d9d9d9;
+    padding: 1rem;
+    margin-top: 2rem;
+    border: 2px inset #fff;
+}
+
+/* ==========================================================================
+   7. BOTTONI E INTERAZIONI
+   ========================================================================== */
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.reset-btn {
+    background-color: #ffaaaa;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.reset-btn:active {
+    border-color: #808080 #fff #fff #808080;
 }

@@ -4,86 +4,123 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Più simile ai sistemi operativi anni '90 */
 }
 
+/* Effetto Tasto Sollevato (per Card e Bottoni a riposo) */
+.retro-outset {
+    border: 3px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    /* Sopra-Sinistra Chiari, Sotto-Destra Scuri */
+    background-color: #c0c0c0;
+    /* Il classico grigio grigio-beige */
+    padding: 10px;
+}
+
+/* Effetto Tasto Premuto o Campo Input (per Hover o Input) */
+.retro-inset {
+    border: 3px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    /* Invertiamo i colori del bordo */
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+/* Bordi Neri "Cartooneschi" (quello che abbiamo usato nell'header) */
+.brutal-border {
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    /* Ombra solida, non sfumata */
+}
+
+
 header {
-    /* Colore sfondo più tenue, tipo plastica di vecchie console */
     background-color: #e0f4f9;
     border-bottom: 3px solid #000;
     padding: 1.5rem;
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    /*LOGO*/
+    .logo-wrapper {
+        flex: 1;
+    }
+
+    .logo-img {
+        height: 200px;
+        width: auto;
+        display: block;
+    }
+
+    /*NAVBAR CENTRALE*/
+    .nav-hd {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: #000;
+        font-weight: 800;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        padding: 8px 16px;
+        border: 2px solid transparent;
+
+        &:hover {
+            background-color: #fff;
+            border: 2px solid #000;
+        }
+    }
+
+    /*Link attivo*/
+    .nav-link.active {
+        background-color: #000;
+        color: #fff;
+    }
+
+    /*SEARCHBAR*/
+    .search-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+
+        input {
+            padding: 10px 15px;
+            border: 2px solid #000;
+            background-color: #fff;
+            font-size: 0.9rem;
+            width: 200px;
+        }
+
+    }
 }
 
-.header-container {
+/*MAIN-CONTAINER*/
+.main-page {
+    padding-top: 2rem;
+    max-width: 80%;
+    margin: auto;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1400px;
-    margin: 0 auto;
-}
+    gap: 2rem;
 
-/* --- LOGO --- */
-.logo-wrapper {
-    flex: 1;
-}
+    .filter-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 30%;
+    }
 
-.logo-img {
-    height: 200px;
-    width: auto;
-    display: block;
-}
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
 
-/* --- NAVBAR CENTRALE --- */
-.nav-hd {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
 
-.nav-link {
-    text-decoration: none;
-    color: #000;
-    font-weight: 800;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 8px 16px;
-    border: 2px solid transparent;
-    transition: all 0.1s;
-}
-
-/* Effetto al passaggio: bordo netto invece di ombre colorate */
-.nav-link:hover {
-    background-color: #fff;
-    border: 2px solid #000;
-}
-
-/* Link attivo: stile "tasto premuto" */
-.nav-link.active {
-    background-color: #000;
-    color: #fff;
-}
-
-/* --- SEARCHBAR --- */
-.search-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-/* Stile Input pulito ma solido */
-input {
-    padding: 10px 15px;
-    border: 2px solid #000;
-    background-color: #fff;
-    font-size: 0.9rem;
-    width: 200px;
-}
-
-/* Rimuoviamo ombre e inclinazioni eccessive */
-.nav-hd,
-.logo-wrapper,
-.search-wrapper {
-    transform: none;
 }

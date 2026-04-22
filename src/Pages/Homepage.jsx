@@ -1,12 +1,16 @@
 import GameList from "../components/GameList";
+import FiltersForm from "../components/FiltersForm";
 
 export default function Homepage() {
 
     return (
-        <div>
-            <h2>sono l'hompage con sotto la lista dei giochi</h2>
-
-            <GameList />
+        <div className="main-page">
+            <div className="filter-container">
+                <FiltersForm />
+            </div>
+            <div className="card-container">
+                <GameList />
+            </div>
         </div>
     )
 }

@@ -29,7 +29,7 @@ export default function FiltersForm() {
 
         <>
 
-            <label><p>categotia</p>
+            <label><p>categoria</p>
                 <select name="category" value={filters.category} onChange={handleFilterChange}>
                     <option value="">scegli</option>
                     <option value="Classic">Classic</option>

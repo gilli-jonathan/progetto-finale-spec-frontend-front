@@ -40,7 +40,7 @@ export default function Compare() {
                     {fullDetails.map(game => (
                         <div key={game.id} className="retro-outset">
                             {/* Immagine con bordo brutalista */}
-                            <div className="card-img-wrapper brutal-border" style={{ height: 'auto' }}>
+                            <div className="card-img-wrapper brutal-border" style={{ height: '200px' }}>
                                 <img src={game.image} alt={game.title} style={{ imageRendering: 'pixelated' }} />
                             </div>
 

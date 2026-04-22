@@ -1,6 +1,9 @@
 export default function Footer() {
 
     return (
-        <h3>sono il footer</h3>
+        <div className="footer">
+            <p><bold>create by Jon whit ❤️ </bold></p>
+
+        </div>
     )
 }

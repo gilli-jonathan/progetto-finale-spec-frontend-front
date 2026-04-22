@@ -30,7 +30,7 @@ export default function GameDetails() {
             {/* Colonna Sinistra: La "Super Card" */}
             <div className="detail-visual">
                 <div className="card retro-outset">
-                    <div className="img-placeholder brutal-border">
+                    <div className="img-placeholder brutal-border img-detail-container">
                         <img src={zeldagame.image} alt={zeldagame.title} />
                     </div>
 

@@ -15,7 +15,7 @@ export default function Favorite() {
     const sortedFavs = [...favGames].sort((a, b) => a.title.localeCompare(b.title));
 
     return (
-        <div className="detail-container">
+        <div className="card-container">
             {
                 sortedFavs.length > 0 ? (
                     sortedFavs.map((game) => {

@@ -4,9 +4,8 @@ import { useContext } from "react"
 import { FavoriteContext, CompareContext } from "../context/GlobalContext"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart as faSolidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as faSolidHeart, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faRegularHeart } from '@fortawesome/free-regular-svg-icons';
-import { faCodeCompare } from '@fortawesome/free-solid-svg-icons';
 
 export default function GameDetails() {
 
@@ -35,21 +34,21 @@ export default function GameDetails() {
                         <img src={zeldagame.image} alt={zeldagame.title} />
                     </div>
 
-                    <div className="card-actions">
+                    <div className="card-actions card-container">
                         <button className="retro-outset" onClick={() => toggleFav(zeldagame)}>
                             <FontAwesomeIcon
                                 icon={isFavorite ? faSolidHeart : faRegularHeart}
                                 color={isFavorite ? "red" : "black"}
                             />
-                            <span>{isFavorite ? "Rimuovi" : "Salva nei preferiti"}</span>
+                            <span>{isFavorite ? " Rimuovi dalla lista dei preferiti" : " Aggiungi tra i preferiti"}</span>
                         </button>
 
                         <button className="retro-outset" onClick={() => toggleComp(zeldagame)}>
                             <FontAwesomeIcon
-                                icon={faCodeCompare}
+                                icon={faShieldHalved}
                                 color={isToCompare ? "blue" : "black"}
                             />
-                            <span>{isToCompare ? "In confronto" : "Confronta"}</span>
+                            <span>{isToCompare ? "Sono timido, niente pragaroni, please" : "Confrontami con un altro gioco"}</span>
                         </button>
                     </div>
                 </div>
@@ -58,9 +57,10 @@ export default function GameDetails() {
             {/* Colonna Destra: Informazioni tecniche */}
             <div className="detail-info retro-outset">
                 <h1 className="brutal-text">{zeldagame.title}</h1>
-                <div className="badge-container">
-                    <span className="badge">{zeldagame.category}</span>
-                    <span className="badge">{zeldagame.console}</span>
+                <div className="badge-container card-container">
+                    <span className="badge"><p><strong>Genere:</strong></p>{zeldagame.category}</span>
+
+                    <span className="badge"><p><strong>Console:</strong></p>{zeldagame.console}</span>
                 </div>
 
                 <hr className="brutal-hr" />

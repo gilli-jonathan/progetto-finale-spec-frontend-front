@@ -34,19 +34,51 @@ export default function Compare() {
 
     return (
         <>
-            <div style={{ display: 'flex', gap: '20px' }}>
-                {fullDetails.map(game => (
-                    <div key={game.id} style={{ border: '1px solid #ccc', padding: '10px', flex: 1 }}>
-                        <img src={game.image} alt={game.title} style={{ width: '100%' }} />
-                        <h2>{game.title}</h2>
-                        <p><strong>Categoria:</strong> {game.category}</p>
-                        <p><strong>Anno:</strong> {game.releaseYear}</p>
-                        <p><strong>Voto:</strong> {game.vote}/100</p>
-                        <p><strong>Console:</strong> {game.console}</p>
-                        <hr />
-                        <p>{game.description}</p>
-                    </div>
-                ))}
+            <div className="main-page">
+                {/* Usiamo card-container per avere la griglia, ma limitata a 2 colonne se vuoi */}
+                <div className="card-container" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                    {fullDetails.map(game => (
+                        <div key={game.id} className="retro-outset">
+                            {/* Immagine con bordo brutalista */}
+                            <div className="card-img-wrapper brutal-border" style={{ height: 'auto' }}>
+                                <img src={game.image} alt={game.title} style={{ imageRendering: 'pixelated' }} />
+                            </div>
+
+                            <h2 className="brutal-text" style={{ fontSize: '1.5rem', marginTop: '1rem' }}>
+                                {game.title}
+                            </h2>
+
+                            {/* Sezione dettagli evidenziati con retro-inset */}
+                            <div className="technical-grid" style={{ marginTop: '10px' }}>
+                                <div className="retro-inset">
+                                    <strong>Categoria:</strong> {game.category}
+                                </div>
+                                <div className="retro-inset">
+                                    <strong>Voto:</strong> {game.vote}/100
+                                </div>
+                                <div className="retro-inset">
+                                    <strong>Console:</strong> {game.console}
+                                </div>
+                                <div className="retro-inset">
+                                    <strong>Anno:</strong> {game.releaseYear}
+                                </div>
+                            </div>
+
+                            <hr className="brutal-hr" style={{ margin: '15px 0' }} />
+
+                            <p style={{ fontStyle: 'italic' }}>{game.description}</p>
+
+                            {/* Bottone per rimuovere dal confronto usando lo stile reset */}
+                            <button
+                                className="reset-btn retro-outset"
+                                onClick={() => toggleComp(game)}
+                                style={{ width: '100%', marginTop: '15px' }}
+                            >
+                                RIMUOVI DAL CONFRONTO
+                            </button>
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     )

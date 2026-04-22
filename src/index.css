@@ -103,10 +103,14 @@ header {
 }
 
 /*MAIN-CONTAINER*/
-.main-page {
-    padding-top: 2rem;
+main {
     max-width: 80%;
     margin: auto;
+
+}
+
+.main-page {
+    padding-top: 2rem;
     display: flex;
     gap: 2rem;
 
@@ -120,6 +124,32 @@ header {
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
+
+    }
+
+    .card {
+
+        padding: 1.5rem;
+        background-color: #808080;
+        flex: 0 0 calc((100% / 3) - 1.34rem);
+
+        background-color: #c0c0c0;
+        border: 3px solid #000;
+
+        .img-container {
+            display: flex;
+            align-items: center;
+            background-color: green;
+            margin: auto;
+            height: 90px;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-link {
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+        }
     }
 
 

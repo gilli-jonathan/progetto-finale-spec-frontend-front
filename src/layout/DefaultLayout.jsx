@@ -8,7 +8,9 @@ export default function DefualtLayout() {
 
         <>
             <Header />
-            <Outlet />
+            <main className="main">
+                <Outlet />
+            </main>
             <Footer />
         </>
 

@@ -46,6 +46,28 @@ export default function FiltersForm() {
                 </select>
             </div>
 
+            {/* <div className="filter-group">
+                <label>Console</label>
+                <select
+                    name="console"
+                    className="retro-inset"
+                    value={filters.console}
+                    onChange={handleFilterChange}
+                >
+                    <option value="">Tutte le categorie</option>
+                    <option value="NES">Famicom</option>
+                    <option value="SNES">Super Nintendo</option>
+                    <option value="GameBoy">GameBoy</option>
+                    <option value="Nintendo 64">Nintendo 64</option>
+                    <option value="GameCube">GameCube</option>
+                    <option value="Nintendo DS">Nintendo DS</option>
+                    <option value="Wii">Wii</option>
+                    <option value="Nintendo 3DS">Nintendo 3DS</option>
+                    <option value="Switch">Switch</option>
+
+                </select>
+            </div> */}
+
             <div className="filter-group">
                 <label>Ordina Alfabetico</label>
                 <select

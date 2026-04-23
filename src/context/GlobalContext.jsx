@@ -11,6 +11,7 @@ function GameProvider({ children }) {
 
     //la stringa che verrà usata come ricerca tremite la searchBar
     const [searchQuery, setSearchQuery] = useState("")
+    const [inputValue, setInputValue] = useState('')
 
     // metto i filtri per la ricerca come categoria, console, ecc..
     const [filters, setFilters] = useState({
@@ -21,7 +22,7 @@ function GameProvider({ children }) {
     })
 
     return (
-        <GameContext.Provider value={{ games, searchQuery, setSearchQuery, filters, setFilters }}>
+        <GameContext.Provider value={{ games, searchQuery, setSearchQuery, filters, setFilters, inputValue, setInputValue }}>
             {children}
         </GameContext.Provider>
     )

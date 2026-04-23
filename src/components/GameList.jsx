@@ -43,24 +43,32 @@ export default function GameList() {
     return (
 
         <>
-            {gameList.map((game) => {
-                // CALCOLIAMO LO STATO QUI DENTRO PER OGNI GIOCO
-                const isFavorite = favGames.some(fav => fav.id === game.id);
-                const isToCompare = compGames.some(comp => comp.id === game.id);
+            {gameList.length > 0 ?
 
-                return (
+                gameList.map((game) => {
+                    // CALCOLIAMO LO STATO QUI DENTRO PER OGNI GIOCO
+                    const isFavorite = favGames.some(fav => fav.id === game.id);
+                    const isToCompare = compGames.some(comp => comp.id === game.id);
 
-                    <GameCard
-                        key={game.id} // Indispensabile per React
-                        game={game}   // <--- QUI passi l'oggetto al figlio!
-                        isFavorite={isFavorite}
-                        isToCompare={isToCompare}
-                        onToggleFav={toggleFav}
-                        onToggleComp={toggleComp}
-                    />
+                    return (
 
-                );
-            })
+                        <GameCard
+                            key={game.id} // Indispensabile per React
+                            game={game}   // <--- QUI passi l'oggetto al figlio!
+                            isFavorite={isFavorite}
+                            isToCompare={isToCompare}
+                            onToggleFav={toggleFav}
+                            onToggleComp={toggleComp}
+                        />
+
+                    );
+                }) : (
+                    <div>
+                        <h4>Nessun gioco trovato per la tua ricerca!</h4>
+                        <p>il campo di ricerca: "{searchQuery}" non esiste </p>
+                    </div>
+                )
+
             }
         </>
     )

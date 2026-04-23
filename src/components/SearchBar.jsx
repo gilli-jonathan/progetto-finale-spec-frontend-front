@@ -5,9 +5,9 @@ import { debounce } from "../utils/debounce"
 export default function Searchbar() {
 
     //lo state che gestisce la stringa di ricerca tramite input controllato
-    const { searchQuery, setSearchQuery } = useContext(GameContext)
+    const { searchQuery, setSearchQuery, inputValue, setInputValue } = useContext(GameContext)
 
-    const [inputValue, setInputValue] = useState('')
+    // const [inputValue, setInputValue] = useState('')
 
     // 2. Creiamo la callback debouncata
     // Usiamo useMemo per assicurarci che la funzione debouncata sia creata UNA SOLA VOLTA
@@ -29,6 +29,7 @@ export default function Searchbar() {
 
         <>
             <input
+                className="retro-inset"
                 type="text"
                 value={inputValue}
                 onChange={handleChange}

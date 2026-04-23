@@ -15,7 +15,9 @@ export default function Header() {
                 <Navbar />
 
                 <div className="search-wrapper">
-                    <Searchbar />
+                    <div className="logo-wrapper">
+                        <img src={imgLogo} alt="MasterRom" className="logo-img" />
+                    </div>
                 </div>
 
             </div>

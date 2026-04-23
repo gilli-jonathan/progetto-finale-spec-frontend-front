@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { GameContext } from "../context/GlobalContext";
+import Searchbar from "./SearchBar";
 
 export default function FiltersForm() {
 
-    const { filters, setFilters } = useContext(GameContext) //filters contiene category, console, platform
-
+    const { filters, setFilters, setSearchQuery, setInputValue } = useContext(GameContext)
 
     // Funzione per gestire il cambiamento della select
     const handleFilterChange = (e) => {
@@ -29,7 +29,7 @@ export default function FiltersForm() {
 
         <div className="filters-sidebar retro-outset">
             <h4 className="brutal-border-bottom">FILTRI</h4>
-
+            <Searchbar />
             <div className="filter-group">
                 <label>Categoria</label>
                 <select
@@ -84,7 +84,11 @@ export default function FiltersForm() {
             <button
                 type="button"
                 className="reset-btn retro-outset"
-                onClick={() => setFilters(resetObj)}
+                onClick={() => {
+                    setFilters(resetObj);// Reset dei filtri (categoria, ordine, ecc.)
+                    setSearchQuery('');// Reset della barra di ricerca
+                    setInputValue('');
+                }}
             >
                 RESET FILTRI
             </button>

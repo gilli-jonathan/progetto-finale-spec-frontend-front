@@ -16,7 +16,7 @@ export default function Searchbar() {
             console.log("Eseguo ricerca per:", value);
             setSearchQuery(value); // Questa è la callback che aggiorna il context
         }, 500),
-        [setSearchQuery] // Dipendenza: se il context cambia (raro), si aggiorna
+        []
     );
 
     const handleChange = (e) => {

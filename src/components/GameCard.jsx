@@ -17,7 +17,7 @@ const GameCard = memo(function GameCard({ game, isFavorite, isToCompare, onToggl
             </div>
 
             <Link className="card-link" to={`/game/${game.id}`}>
-                <p className="card-title"><strong>{game.title}</strong></p>
+                <p className="card-title"><b>{game.title}</b></p>
             </Link>
 
             <p className="card-category">{game.category}</p>

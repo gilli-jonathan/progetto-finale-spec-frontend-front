@@ -1,0 +1,23 @@
+export const pic = [
+    { id: 1, image: "/z1.jpg" },
+    { id: 2, image: "/z2.jpg" },
+    { id: 3, image: "/past.webp" },
+    { id: 4, image: "/link.png" },
+    { id: 5, image: "/ocarina.png" },
+    { id: 6, image: "/majora.jpg" },
+    { id: 7, image: "/ages.jpg" },
+    { id: 8, image: "/seasons.jpg" },
+    { id: 9, image: "/4swords.jpg" },
+    { id: 10, image: "/wind.webp" },
+    { id: 11, image: "/adventure.jpg" },
+    { id: 12, image: "/minish.jpg" },
+    { id: 13, image: "/ligth.webp" },
+    { id: 14, image: "/phantom.jpg" },
+    { id: 15, image: "/spirit.jpg" },
+    { id: 16, image: "/skyward.jpg" },
+    { id: 17, image: "/between.jpg" },
+    { id: 18, image: "/triforce.jpg" },
+    { id: 19, image: "/botw.jpg" },
+    { id: 20, image: "/tears.jpg" },
+    { id: 21, image: "/windsom.avif" }
+];

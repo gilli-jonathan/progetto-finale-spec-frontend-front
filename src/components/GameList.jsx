@@ -53,8 +53,8 @@ export default function GameList() {
                     return (
 
                         <GameCard
-                            key={game.id} // Indispensabile per React
-                            game={game}   // <--- QUI passi l'oggetto al figlio!
+                            key={game.id}
+                            game={game}
                             isFavorite={isFavorite}
                             isToCompare={isToCompare}
                             onToggleFav={toggleFav}

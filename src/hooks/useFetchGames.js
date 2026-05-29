@@ -1,31 +1,45 @@
 import { useEffect, useState } from "react";
+import { pic } from "../utils/pic";
+
 const { VITE_API_URL } = import.meta.env;
 
-//hook per avere tutti i giochi
+// Hook per avere tutti i giochi
 export function useFetchGames() {
-
-    const [games, setGames] = useState([])
+    const [games, setGames] = useState([]);
 
     useEffect(() => {
 
-        //logica della chiamata fetch
+        // Logica della chiamata fetch
         async function fetchGames() {
-
             try {
-                const response = await fetch(VITE_API_URL)
-                const data = await response.json()
-                setGames(data)
+                const response = await fetch(VITE_API_URL);
+                const data = await response.json(); // Questi sono i dati originali
+
+                // Mergiamo le immagini con map e find
+                const mergedData = data.map(game => {
+                    // Cerca l'immagine da 'pic'
+                    const matchingImageObj = pic.find(img => img.id === game.id);
+
+                    // Ritorna il gioco originale con l'immagine sostituita
+                    return {
+                        ...game, //copio l'oggetto game in più aggiungo l'atributo image
+                        image: matchingImageObj ? matchingImageObj.image : "/placeholder.jpg" //se true aggiungo l'image, altrimenti link triste
+                    };
+                });
+
+                // ora che ho tutto oggetto + immagine lo ttascrivo come GAMES
+                setGames(mergedData);
+
             } catch (error) {
-                console.error(error);
+                console.error("Errore nel recupero dei giochi:", error);
             }
         }
 
-        //eseguo la mia chiamata al montaggio dei componenti richiamando la funzione
-        fetchGames()
+        // Eseguo la mia chiamata al montaggio
+        fetchGames();
 
-    }, [])
+    }, []); // L'array vuoto per fare tutto solo una sola volta
 
-    //una volta andata a buon fine restituisco l'array games con dentro le risposte
-    return games
+    // Restituisco l'array games
+    return games;
 }
-

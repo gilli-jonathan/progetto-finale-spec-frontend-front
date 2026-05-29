@@ -22,12 +22,12 @@ export function useFetchGames() {
 
                     // Ritorna il gioco originale con l'immagine sostituita
                     return {
-                        ...game, //copio l'oggetto game in più aggiungo l'atributo image
+                        ...game, //copio l'oggetto game in più aggiungo l'attributo image
                         image: matchingImageObj ? matchingImageObj.image : "/placeholder.jpg" //se true aggiungo l'image, altrimenti link triste
                     };
                 });
 
-                // ora che ho tutto oggetto + immagine lo ttascrivo come GAMES
+                // ora che ho tutto oggetto + immagine lo trascrivo come GAMES
                 setGames(mergedData);
 
             } catch (error) {
